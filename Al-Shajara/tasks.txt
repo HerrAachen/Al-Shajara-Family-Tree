@@ -1,0 +1,10 @@
+ - Tree Layout:
+ -- layout not optimal for more than spouse with children
+ -- Eltern zentriert über Kindern
+ -- Center person mit Rahmen markieren
+ -- mehrere Personen markieren können um z.B. Elternteil von allen gleichzeitig hinzufügen zu können
+ - internationalization
+ - deployment process
+ - Biografie als sortierte Liste von Ereignissen (text) und daten (PDD)
+ -- xml schreiben (lesen erledigt)
+ -- GUI (Anzeige erledigt, Editieren noch nicht)

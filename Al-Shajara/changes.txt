@@ -1,0 +1,15 @@
+Version 0.2
+ - information saved depending on writing system
+ - JGraphX Tree Visualization
+ -- Adjusting HierarchicalLayout: persons from same generation always in same vertical position
+ -- Adjusting HierarchicalLayout: spouses always adjacent in tree visualization
+ -- ToolTips showing summary about person on HTML Table
+ -- control in graph visualization with context menu
+ -- children ordered by age from left to right
+ - Partly specified dates
+ - ages of persons and ages children were born
+ - maiden names in person information
+ - Gui component for partly specified dates
+Version 0.1 (2012-04-08)
+ - basic xml format and serialization
+ - editing of information about family members in gui

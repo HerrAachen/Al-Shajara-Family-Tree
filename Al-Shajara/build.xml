@@ -1,0 +1,32 @@
+<project name="AlShajara" default="compile">
+	<property file="module.properties"/>
+	<target name="compile">
+		<javac srcdir="src" destdir="bin"/>
+	</target>
+	
+	<target name="jar" depends="compile">
+		<jar destfile="${jar}">
+		    <fileset dir="${classes}"/>
+		    <manifest>
+		      <attribute name="Main-Class" value="de.aaa.al_shajara.AlShajara"/>
+		        <!-- <attribute name="Class-Path" value="${lib-dir-name}\jung-visualization-2.0.1.jar ${lib-dir-name}\stax-api-1.0.1.jar ${lib-dir-name}\vecmath-1.3.1.jar ${lib-dir-name}\wstx-asl-3.2.6.jar ${lib-dir-name}\collections-generic-4.01.jar ${lib-dir-name}\colt-1.2.0.jar ${lib-dir-name}\concurrent-1.3.4.jar ${lib-dir-name}\j3d-core-1.3.1.jar ${lib-dir-name}\jung-3d-2.0.1.jar ${lib-dir-name}\jung-3d-demos-2.0.1.jar ${lib-dir-name}\jung-algorithms-2.0.1.jar ${lib-dir-name}\jung-api-2.0.1.jar ${lib-dir-name}\jung-graph-impl-2.0.1.jar ${lib-dir-name}\jung-io-2.0.1.jar ${lib-dir-name}\jung-jai-2.0.1.jar ${lib-dir-name}\jung-jai-samples-2.0.1.jar ${lib-dir-name}\jung-samples-2.0.1.jar"/> -->
+		        <attribute name="Class-Path" value="${lib-dir-name}\jgraphx.jar"/>
+		    	
+		    </manifest>
+		</jar>
+	</target>
+	
+	<target name="deploy" depends="jar">
+		<copy file="${jar}" tofile="${deploy-dir}/${jar-name}" />
+		<copy todir="${deploy-dir}/${lib-dir-name}">
+			<fileset dir="${lib-dir}"/>
+		</copy>
+		<delete failonerror="false">
+			<fileset dir="${deploy-dir}/data"/>
+		</delete>
+		<copy todir="${deploy-dir}/data">
+			<fileset dir="data"/>
+		</copy>
+		<copy file="changes.txt" tofile="${deploy-dir}/changes.txt"/>
+	</target>
+</project>
